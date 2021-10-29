@@ -1,0 +1,212 @@
+<!DOCTYPE html
+><!-- このファイルはHTMLですという宣言 -->
+<html>
+  <!-- ここからHTMLが始まりますというタグ -->
+
+  <head>
+    <!-- ここから裏の設定ですよという宣言 -->
+    <meta charset="utf-8" />
+    <!-- 文字化け防止の記述 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- ややこしいので無視してOK -->
+    <title>B/NETアドレス変換</title>
+    <!-- ページのタイトルを入れます -->
+    <link rel="stylesheet" href="test.css" /></head
+  ><!-- ここまでがうらの設定ですよという宣言 -->
+
+  <body>
+    <!-- ここからページに表示される内容ですよという宣言 -->
+
+    <h1>B/NETアドレス変換</h1>
+
+    <input type="text" name="add"" id ="add" size="26" maxlength="26"
+    oninput="func2()" />
+    <div id="str">アドレスを入力してください。</div>
+
+    <!-- ↓スイッチを配置-->
+
+    <div class="switchArea">
+      <input
+        type="checkbox"
+        id="switch128"
+        name="switch"
+        value="128"
+        onclick="func1()"
+      />
+      <label for="switch128"><span></span></label>
+      <div id="swImg"></div>
+    </div>
+
+    <div class="switchArea">
+      <input
+        type="checkbox"
+        id="switch64"
+        name="switch"
+        value="64"
+        onclick="func1()"
+      />
+      <label for="switch64"><span></span></label>
+      <div id="swImg"></div>
+    </div>
+
+    <div class="switchArea">
+      <input
+        type="checkbox"
+        id="switch32"
+        name="switch"
+        value="32"
+        onclick="func1()"
+      />
+      <label for="switch32"><span></span></label>
+      <div id="swImg"></div>
+    </div>
+
+    <div class="switchArea">
+      <input
+        type="checkbox"
+        id="switch16"
+        name="switch"
+        value="16"
+        onclick="func1()"
+      />
+      <label for="switch16"><span></span></label>
+      <div id="swImg"></div>
+    </div>
+
+    <div class="switchArea">
+      <input
+        type="checkbox"
+        id="switch8"
+        name="switch"
+        value="8"
+        onclick="func1()"
+      />
+      <label for="switch8"><span></span></label>
+      <div id="swImg"></div>
+    </div>
+
+    <div class="switchArea">
+      <input
+        type="checkbox"
+        id="switch4"
+        name="switch"
+        value="4"
+        onclick="func1()"
+      />
+      <label for="switch4"><span></span></label>
+      <div id="swImg"></div>
+    </div>
+
+    <div class="switchArea">
+      <input
+        type="checkbox"
+        id="switch2"
+        name="switch"
+        value="2"
+        onclick="func1()"
+      />
+      <label for="switch2"><span></span></label>
+      <div id="swImg"></div>
+    </div>
+
+    <div class="switchArea">
+      <input
+        type="checkbox"
+        id="switch1"
+        name="switch"
+        value="1"
+        onclick="func1()"
+      />
+      <label for="switch1"><span></span></label>
+      <div id="swImg"></div>
+    </div>
+
+    <!-- ↑スイッチを配置-->
+
+    <!-- ↓java-->
+
+    <script language="javascript" type="text/javascript">
+       const func1 = () => {
+         const elements = document.getElementsByName("switch");
+         let addgoukei = 0;
+
+         for (let i=0; i<elements.length; i++){
+           if (elements[i].checked){
+             addgoukei  = parseInt(addgoukei) + parseInt(elements[i].value);
+           }
+         }
+         if(addgoukei==0)
+         {
+           addgoukei = ""
+           document.getElementById("add").value = addgoukei;
+           document.getElementById("str").textContent="アドレスを入力してください。";
+         }
+         else{
+                  document.getElementById("add").value = addgoukei;
+                  document.getElementById("str").textContent="スイッチのアドレスを表示してます。";
+      }
+       }
+
+
+       const func2 = () => {
+         let addnyuryoku = 0 ;
+         let count = 0 ;
+         let leng = 0 ;
+         let tasizan = "" ;
+         const elements = document.getElementById("add");
+         const sw = document.getElementsByName("switch");
+         addnyuryoku = elements.value
+         if(addnyuryoku.match(/[^0-9]+/)){
+                        for(i = 0; i < sw.length; i++) {
+   　　　　　 sw[i].checked = false
+    　　　　　}
+      document.getElementById("str").textContent="半角数字で入力してください。";
+         }
+         else if (addnyuryoku==""){
+                        for(i = 0; i < sw.length; i++) {
+   　　　　　 sw[i].checked = false
+    　　　　　}
+         document.getElementById("str").textContent="アドレスを入力してください。";
+         }
+         else if (0>=addnyuryoku){
+                        for(i = 0; i < sw.length; i++) {
+   　　　　　 sw[i].checked = false
+    　　　　　}
+         document.getElementById("str").textContent="1～255を入力してください";
+         }
+         else if (255<=addnyuryoku){
+                        for(i = 0; i < sw.length; i++) {
+   　　　　　 sw[i].checked = false
+    　　　　　}
+         document.getElementById("str").textContent="1～255を入力してください";
+         }
+         else{
+             for(i = 0; i < sw.length; i++) {
+   　　　　　 sw[i].checked = false
+    　　　　　}
+           addnyuryoku = parseInt(addnyuryoku)           
+           addnyuryoku = addnyuryoku.toString(2)
+           let arraySplit = addnyuryoku.split("")
+           leng = arraySplit.length
+           for (let i=arraySplit.length-1; i>-1; i--){
+           if(arraySplit[i]==1){
+           tasizan += 2 ** count
+           tasizan += "+"
+           console.log(leng-count)
+           console.log(leng)
+           console.log(count)
+           sw[7-count].checked=true
+           }
+           else{
+           }
+           count++;
+
+         }
+        document.getElementById("str").textContent=tasizan.slice(0,-1);
+        }
+       }
+    </script>
+  </body>
+  <!-- ここまでがページに表示される内容ですよという宣言 -->
+</html>
+<!-- ここまでがHTMLですという終わりの宣言 -->
