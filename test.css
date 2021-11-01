@@ -1,4 +1,9 @@
- /* === ボタンを表示するエリア ============================== */
+input[type="text"] {
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 16px;
+}
+/* === ボタンを表示するエリア ============================== */
 .switchArea {
   line-height    : 70px;                /* 1行の高さ          */
   letter-spacing : 0;                   /* 文字間             */
