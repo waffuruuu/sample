@@ -1,7 +1,7 @@
 input[type="text"] {
+  font-size: 320px;
   box-sizing: border-box;
   width: 100%;
-  font-size: 320px;
 }
 /* === ボタンを表示するエリア ============================== */
 .switchArea {
