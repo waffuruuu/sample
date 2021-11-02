@@ -3,6 +3,12 @@ input[type="text"] {
   box-sizing: border-box;
   width: 100%;
 }
+
+#head {
+  font-size: 24px;
+}
+
+
 /* === ボタンを表示するエリア ============================== */
 .switchArea {
   line-height    : 70px;                /* 1行の高さ          */
