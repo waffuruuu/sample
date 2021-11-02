@@ -7,12 +7,19 @@ input[type="text"] {
 #head {
   font-size: 16px;
   font-weight:  bold;
-  font-family: 'ＭＳ Ｐゴシック';
 }
 
 #str {
   font-size: 16px;
-  font-family: 'ＭＳ Ｐゴシック';
+}
+
+body {
+  font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
 }
 
 
