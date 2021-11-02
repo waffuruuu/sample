@@ -18,14 +18,14 @@ input[type="text"] {
 
 /* === ボタンを表示するエリア ============================== */
 .switchArea {
-  line-height    : 70px;                /* 1行の高さ          */
+  line-height    : 38px;                /* 1行の高さ          */
   letter-spacing : 0;                   /* 文字間             */
   text-align     : center;              /* 文字位置は中央     */
-  font-size      : 32px;                /* 文字サイズ         */
+  font-size      : 16px;                /* 文字サイズ         */
 
   position       : relative;            /* 親要素が基点       */
   margin         : auto;                /* 中央寄せ           */
-  width          : 165px;               /* ボタンの横幅       */
+  width          : 90px;               /* ボタンの横幅       */
   background     : #fff;                /* デフォルト背景色   */
 }
 
@@ -38,9 +38,9 @@ input[type="text"] {
 .switchArea label {
   display        : block;               /* ボックス要素に変更 */
   box-sizing     : border-box;          /* 枠線を含んだサイズ */
-  height         : 70px;                /* ボタンの高さ       */
+  height         : 38px;                /* ボタンの高さ       */
   border         : 2px solid rgba(153, 153, 153, 0.55);   /* 未選択タブのの枠線 */
-  border-radius  : 35px;                /* 角丸               */
+  border-radius  : 19px;                /* 角丸               */
 }
 
  /* === チェックボックスのラベル（ONのとき） ================ */
@@ -51,26 +51,26 @@ input[type="text"] {
  /* === 表示する文字（標準） ================================ */
 .switchArea label span:after{
   content        : "OFF";               /* 表示する文字       */
-  padding        : 0 0 0 42px;          /* 表示する位置       */
+  padding        : 0 0 0 22px;          /* 表示する位置       */
   color          : rgba(153, 153, 153, 0.55);             /* 文字色             */
 }
 
  /* === 表示する文字（ONのとき） ============================ */
 .switchArea  input[type="checkbox"]:checked + label span:after{
   content        : "ON";                /* 表示する文字       */
-  padding        : 0 42px 0 0;          /* 表示する位置       */
+  padding        : 0 22px 0 0;          /* 表示する位置       */
   color          : rgba(102, 255, 102, 0.84);             /* 文字色             */
 }
 
  /* === 丸部分のSTYLE（標準） =============================== */
 .switchArea #swImg {
   position       : absolute;            /* 親要素からの相対位置*/
-  width          : 62px;                /* 丸の横幅           */
-  height         : 62px;                /* 丸の高さ           */
+  width          : 30px;                /* 丸の横幅           */
+  height         : 30px;                /* 丸の高さ           */
   background     : rgba(153, 153, 153, 0.55);             /* カーソルタブの背景 */
   top            : 4px;                 /* 親要素からの位置   */
   left           : 4px;                 /* 親要素からの位置   */
-  border-radius  : 31px;                /* 角丸               */
+  border-radius  : 15px;                /* 角丸               */
   transition     : .2s;                 /* 滑らか変化         */
 }
 
