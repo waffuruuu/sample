@@ -9,7 +9,7 @@
     <!-- 文字化け防止の記述 -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- ややこしいので無視してOK -->
-    <title>アドレス変換</title>
+    <title>B/NETアドレス変換</title>
     <!-- ページのタイトルを入れます -->
     <link rel="stylesheet" href="test.css" /></head
   ><!-- ここまでがうらの設定ですよという宣言 -->
@@ -17,21 +17,15 @@
   <body>
     <!-- ここからページに表示される内容ですよという宣言 -->
 
-    <div id="head">アドレス変換</div>
+    <h1>B/NETアドレス変換</h1>
 
-    <input type="tel"
-           name="add"
-           id="add"
-           oninput="func2()"
-     />
+    <input type="text" name="add"" id ="add" size="26" maxlength="26"
+    oninput="func2()" />
     <div id="str">アドレスを入力してください。</div>
-    
-    <!-- ↓ズーム禁止-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-    
+
     <!-- ↓スイッチを配置-->
 
-    <div class="switchArea">
+    <div class="switchArea1">
       <input
         type="checkbox"
         id="switch128"
@@ -43,7 +37,7 @@
       <div id="swImg"></div>
     </div>
 
-    <div class="switchArea">
+    <div class="switchArea2">
       <input
         type="checkbox"
         id="switch64"
@@ -55,7 +49,7 @@
       <div id="swImg"></div>
     </div>
 
-    <div class="switchArea">
+    <div class="switchArea4">
       <input
         type="checkbox"
         id="switch32"
@@ -67,7 +61,7 @@
       <div id="swImg"></div>
     </div>
 
-    <div class="switchArea">
+    <div class="switchArea8">
       <input
         type="checkbox"
         id="switch16"
@@ -79,7 +73,7 @@
       <div id="swImg"></div>
     </div>
 
-    <div class="switchArea">
+    <div class="switchArea16">
       <input
         type="checkbox"
         id="switch8"
@@ -91,7 +85,7 @@
       <div id="swImg"></div>
     </div>
 
-    <div class="switchArea">
+    <div class="switchArea32">
       <input
         type="checkbox"
         id="switch4"
@@ -103,7 +97,7 @@
       <div id="swImg"></div>
     </div>
 
-    <div class="switchArea">
+    <div class="switchArea64">
       <input
         type="checkbox"
         id="switch2"
@@ -115,7 +109,7 @@
       <div id="swImg"></div>
     </div>
 
-    <div class="switchArea">
+    <div class="switchArea128">
       <input
         type="checkbox"
         id="switch1"
@@ -174,19 +168,13 @@
     　　　　　}
          document.getElementById("str").textContent="アドレスを入力してください。";
          }
-         else if (123456789==addnyuryoku){
-                        for(i = 0; i < sw.length; i++) {
-   　　　　　 sw[i].checked = false
-    　　　　}
-         document.getElementById("str").textContent="t";
-         }
          else if (0>=addnyuryoku){
                         for(i = 0; i < sw.length; i++) {
    　　　　　 sw[i].checked = false
     　　　　　}
          document.getElementById("str").textContent="1～255を入力してください";
          }
-         else if (256<=addnyuryoku){
+         else if (255<=addnyuryoku){
                         for(i = 0; i < sw.length; i++) {
    　　　　　 sw[i].checked = false
     　　　　　}
